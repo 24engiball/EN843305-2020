@@ -1,6 +1,6 @@
 # EN843305-2020
 
-Mobile Application Design 
+Mobile Application Development
 
 ธีรวัฒน์ มธุรส 545040172-1
 
