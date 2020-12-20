@@ -2,7 +2,7 @@
 
 Mobile Application Development
 
-ธีรวัฒน์ มธุรส 545040172-1
+Theerawat Mathuros  545040172-1
 
 Lab 1
 
