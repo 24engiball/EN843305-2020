@@ -10,4 +10,4 @@ Uniy Publish
     https://play.unity.com/p/webgl-builds-4466
 
 Github Page
-    
+    https://24engiball.github.io/EN843305-2020/Labs/lab1/index.html
