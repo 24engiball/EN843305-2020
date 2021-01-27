@@ -15,6 +15,12 @@ public class GameManager : MonoBehaviour
     
     float height ;
     float width ;
+    
+    public string[] fruitWave;
+
+    int waveState = 0;
+    int waveCount = 0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,7 +30,7 @@ public class GameManager : MonoBehaviour
      height = Camera.main.orthographicSize * 2.0f;
      width = height * Screen.width / Screen.height;
 
-    InvokeRepeating("SpawnFruit", 1.0f, 2.0f);
+    InvokeRepeating("SpawnFruitWave", 1.0f, 2.0f);
 
 
     }
@@ -50,6 +56,23 @@ public class GameManager : MonoBehaviour
 void SpawnFruit(){
     Vector2 position = new Vector2(Random.Range(-width/2, width/2),height/2);
     Instantiate(fruit, position, Quaternion.identity);
+}
+
+void SpawnFruitWave(){
+
+    if(waveCount>fruitWave[waveState].Length-1){
+        waveCount = 0;
+        waveState++;
+        if(waveState>fruitWave.Length-1){
+            CancelInvoke("SpawnFruitWave");
+            return;
+        }
+     
+    }
+    int fruitPosition =int.Parse( fruitWave[waveState][waveCount].ToString());
+    Vector2 position = new Vector2(-width/2 + (width/10f)*fruitPosition ,height/2);
+    Instantiate(fruit, position, Quaternion.identity);
+    waveCount++;
 }
 
 
